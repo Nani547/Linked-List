@@ -6,7 +6,8 @@ class Main:
 class LinkedList:
     def __init__(self):
         self.head = None
-        
+
+    # Inserting elements at the beginning.
     def insert_at_beginning(self,data):
         node = Main(data)
         if self.head is None:
@@ -15,6 +16,8 @@ class LinkedList:
             curr = self.head
             self.head = node
             node.next = curr
+            
+    # Length of the linked list
     def length(self):
         count = 0
         curr = self.head
@@ -22,7 +25,8 @@ class LinkedList:
             curr = curr.next
             count += 1
         return count
-            
+
+    # Inserting elements at the middle of the linked list using index.
     def insert_at_middle(self,data,index):
         node = Main(data)
         if index<0 or index>=self.length():
@@ -46,7 +50,7 @@ class LinkedList:
                     curr1 = curr1.next
                     count += 1
     
-        
+    # Printing the elements in the linked list    
     def display(self):
         if self.head is None:
             self.head = Main(data)
@@ -55,7 +59,8 @@ class LinkedList:
             while curr:
                 print(curr.data,end="-->")
                 curr = curr.next
-                
+
+    # Inserting elements at the ending of the linked list.
     def insert_at_ending(self,data):
         if self.head is None:
             self.head = Main(data)
@@ -65,7 +70,8 @@ class LinkedList:
                 curr  = curr.next
             curr.next = Main(data)
         return self.head
-    
+
+    # Removing the element from the linked list at any position using index.
     def remove(self,index):
         if index<0 or index>=self.length():
             raise Exception("Error in index")
@@ -84,7 +90,7 @@ class LinkedList:
                     curr = curr.next
                     count += 1
                 
-    
+#User defined code.
 LL = LinkedList()
 n = int(input())
 LL.length()
